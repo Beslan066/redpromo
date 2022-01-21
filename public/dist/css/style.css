@@ -1,0 +1,76 @@
+body {
+    background-color: #f8f8f8;
+}
+
+
+.header {
+
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.container {
+    color: white;
+}
+
+.lead {
+    font-size: 30px;
+}
+
+
+.main {
+    margin-top: 3rem;
+    color: grey;
+}
+
+.card {
+    color: #000;
+    margin-bottom: 25px;
+
+}
+
+.block {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .0.3);
+}
+
+h3 {
+    color: #000;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+footer {
+    color: white;
+    background-color: rgba(46, 39, 39);
+    margin-top: 30px;
+}
+
+.copyright {
+    margin-top: 25px;
+}
+
+@media(max-width: 750px) {
+
+.display-2 {
+    font-size: 3rem;
+}
+
+.lead {
+    font-size: 1.6rem;
+}
+
+.header {
+    height: 300px;
+}
+
+}
+
+
