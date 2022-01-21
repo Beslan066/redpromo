@@ -4,16 +4,16 @@ namespace App\Http\Controllers\News;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\PostFavorite;
 use Illuminate\Http\Request;
 
-class ShowController extends Controller
+class FavoriteController extends Controller
 {
-    public function __invoke(Post $post) {
+    public function __invoke(int $id, Request $request) {
 
+        PostFavorite::query()->firstOrCreate(['post_id' => $id, 'user_ip' => $request->ip()]);
 
-        $posts = Post::query()->where('category_id', $post->category->id)->get();
-
-        return view('news.show', compact('post', 'posts'));
+        return redirect('/');
 
     }
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{ route('post.store') }}" method="post">
+    <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="exampleInputEmail1">title</label>
@@ -12,6 +12,16 @@
                 type="text" class="form-control" id="title"  placeholder="title" name="title">
 
             @error('title')
+            <div class="alert alert-danger">Заполните это поле</div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Lead</label>
+            <input
+                value="{{ old('lead') }}"
+                type="text" class="form-control" id="lead" placeholder="content" name="lead">
+            @error('lead')
             <div class="alert alert-danger">Заполните это поле</div>
             @enderror
         </div>
@@ -26,21 +36,19 @@
             @enderror
         </div>
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">img</label>
-            <input
-                value="{{ old('img') }}"
-                type="text" class="form-control" id="image"  placeholder="image " name="img">
 
-            @error('img')
-            <div class="alert alert-danger">Заполните это поле</div>
-            @enderror
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked name="favorite">
+            <label class="form-check-label" for="flexCheckChecked">
+                Добавить в избранное
+            </label>
         </div>
 
         <label for="category">Category</label>
         <select class="form-select" aria-label="Default select example" id="category" name="category_id">
             @foreach($categories as $category)
-            <option value="{{ $category->id }}">{{ $category->title }}</option>
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
 

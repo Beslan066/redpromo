@@ -10,7 +10,10 @@ class ShowController extends Controller
 {
     public function __invoke(Post $post) {
 
-        return view('news.show', compact('post'));
+
+        $posts = Post::query()->where('category_id', $post->category->id)->get();
+
+        return view('news.show', compact('post', 'posts'));
 
     }
 

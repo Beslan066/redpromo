@@ -22,7 +22,7 @@
                     <th scope="row"><a class="link-dark" href="{{ route('post.show', $post->id) }}">{{  $post->id }}</a></th>
                     <td><a class="link-dark" href="{{ route('post.show', $post->id) }}">{{ $post->title }}</a></td>
                     <td><a class="link-dark" href="{{ route('post.show', $post->id) }}">{{ $post->created_at }}</a></td>
-                    <td><a class="link-dark" href="{{ route('post.show', $post->id) }}">{{ $post->category->title }}</a></td>
+                    <td><a class="link-dark" href="{{ route('post.show', $post->id) }}">{{ $post->category->name }}</a></td>
                 </tr>
             @endforeach
 

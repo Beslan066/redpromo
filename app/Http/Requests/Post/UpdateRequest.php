@@ -25,9 +25,12 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'string',
+            'lead' => 'string',
             'content' => 'string',
             'img' => 'string',
-            'category_id' => ''
+            'category_id' => '',
+            'city_id' => '',
+            'favorite' =>  ''
         ];
     }
 }

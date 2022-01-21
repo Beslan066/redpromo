@@ -18,6 +18,23 @@ class CreateCitiesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        Schema::table('posts', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('city_id')->nullable(); //добавляем поле ID категории, ведь каждму посту соответсвует категория
+
+
+            $table->foreign('city_id')->on('posts')->references('id')->onDelete('cascade'); // даем форейн ключ
+        });
+
+        Schema::table('posts', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('category_id')->nullable(); //добавляем поле ID категории, ведь каждму посту соответсвует категория
+
+
+            $table->foreign('category_id')->on('posts')->references('id')->onDelete('cascade'); // даем форейн ключ
+        });
+
     }
 
     /**
